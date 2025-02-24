@@ -10,13 +10,26 @@ phases:
   build:
     commands:
       - npm run build
+      - ls -la .next  # Debug command to verify build output
 
   post_build:
     commands:
+      # Create the directory structure in S3
       - aws s3 sync .next/static s3://${WEBSITE_BUCKET_NAME}/_next/static
       - aws s3 cp .next/standalone/. s3://${WEBSITE_BUCKET_NAME}/ --recursive
+      - aws s3 cp .next/static/. s3://${WEBSITE_BUCKET_NAME}/_next/static/ --recursive
+      - aws s3 cp public/. s3://${WEBSITE_BUCKET_NAME}/ --recursive
 
 artifacts:
   base-directory: .next
   files:
-    - '**/*' 
+    - '**/*'
+  secondary-artifacts:
+    static:
+      base-directory: .next/static
+      files:
+        - '**/*'
+    standalone:
+      base-directory: .next/standalone
+      files:
+        - '**/*' 
