@@ -11,10 +11,10 @@ export default async function Page() {
       <HeroSection />
       <Particles
         className="absolute inset-0 -z-10"
-        quantity={50}
-        ease={70}
-        size={0.05}
-        staticity={40}
+        quantity={1000}
+        ease={250}
+        size={0.15}
+        staticity={30}
         color={"#ffffff"}
       />
     </>
