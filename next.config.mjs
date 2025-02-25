@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
-  // This ensures assets are correctly handled in a serverless environment
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/_next' : '',
+  output: 'export',
+  images: {
+    unoptimized: true,  // Required for static export
+  },
 };
 
 export default nextConfig;
