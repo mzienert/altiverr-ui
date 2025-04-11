@@ -7,7 +7,7 @@ import {
   type AnalyticsProperties,
   type PurchaseItem,
   type UserTraits
-} from '../services/analytics'
+} from '@/lib/analytics'
 
 export const useAnalytics = () => {
   const track = useCallback((eventName: string, properties: AnalyticsProperties = {}) => {
