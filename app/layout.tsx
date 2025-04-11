@@ -1,7 +1,6 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
-import { analytics } from "@/lib/analytics";
 import type { Metadata, Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -21,11 +20,6 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1
 };
-
-// Initialize analytics page tracking
-if (typeof window !== 'undefined') {
-  analytics.page();
-}
 
 export default function RootLayout({
   children,
