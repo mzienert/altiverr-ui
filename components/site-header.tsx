@@ -48,7 +48,7 @@ export function StickyHeader({
       { id: 1, label: "Our Framework", link: "/framework" },
       { id: 2, label: "About Altiverr", link: "/about" },
       { id: 3, label: "Services", link: "/services" },
-      { id: 4, label: "Contact", link: "#contact" },
+      { id: 4, label: "Contact", link: "/contact" },
     ],
     [],
   );
