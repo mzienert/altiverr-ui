@@ -10,7 +10,9 @@ export default async function MarketingLayout({
 }: MarketingLayoutProps) {
   return (
     <>
+      <SiteHeader />
       <main className="mx-auto flex-1 overflow-hidden">{children}</main>
+      <SiteFooter />
     </>
   );
 }

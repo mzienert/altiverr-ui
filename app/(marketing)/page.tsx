@@ -1,17 +1,24 @@
-import ClientSection from "@/components/landing/client-section";
-import CallToActionSection from "@/components/landing/cta-section";
+import WhoWeAreSection from "@/components/landing/who-we-are-section";
+import WhyChooseSection from "@/components/landing/why-choose-section";
+import CoreServicesSection from "@/components/landing/core-services-section";
+import IndustriesSection from "@/components/landing/industries-section";
+import OutcomesSection from "@/components/landing/outcomes-section";
+import FrameworkSection from "@/components/landing/framework-section";
+import ContactCTASection from "@/components/landing/contact-cta-section";
 import HeroSection from "@/components/landing/hero-section";
-import PricingSection from "@/components/landing/pricing-section";
 import Particles from "@/components/magicui/particles";
-import { SphereMask } from "@/components/magicui/sphere-mask";
 
 export default async function Page() {
   return (
     <>
-      <div className="flex justify-center mt-24 mb-12">
-        <img src="/logo.png" alt="Logo" className="h-48" />
-      </div>
       <HeroSection />
+      <WhoWeAreSection />
+      <WhyChooseSection />
+      <CoreServicesSection />
+      <IndustriesSection />
+      <OutcomesSection />
+      <FrameworkSection />
+      <ContactCTASection />
       <Particles
         className="absolute inset-0 -z-10"
         quantity={1000}

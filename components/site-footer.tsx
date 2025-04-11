@@ -1,39 +1,39 @@
-import { DiscordLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
+import { LinkedInLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
 const footerNavs = [
   {
-    label: "Product",
+    label: "Company",
     items: [
       {
-        href: "/",
-        name: "Email Collection",
+        href: "/about",
+        name: "About Altiverr",
       },
       {
-        href: "/pricing",
-        name: "Pricing",
+        href: "/framework",
+        name: "Our Framework",
       },
       {
-        href: "/faq",
-        name: "FAQ",
+        href: "/services",
+        name: "Services",
       },
     ],
   },
 
   {
-    label: "Community",
+    label: "Resources",
     items: [
       {
-        href: "/",
-        name: "Discord",
+        href: "/case-studies",
+        name: "Case Studies",
       },
       {
-        href: "/",
-        name: "Twitter",
+        href: "/blog",
+        name: "Blog",
       },
       {
-        href: "mailto:hello@chatcollect.com",
-        name: "Email",
+        href: "/faq",
+        name: "FAQ",
       },
     ],
   },
@@ -42,12 +42,11 @@ const footerNavs = [
     items: [
       {
         href: "/terms",
-        name: "Terms",
+        name: "Terms of Service",
       },
-
       {
         href: "/privacy",
-        name: "Privacy",
+        name: "Privacy Policy",
       },
     ],
   },
@@ -55,33 +54,44 @@ const footerNavs = [
 
 const footerSocials = [
   {
-    href: "",
-    name: "Discord",
-    icon: <DiscordLogoIcon className="h-4 w-4" />,
+    href: "https://www.linkedin.com/company/altiverr",
+    name: "LinkedIn",
+    icon: <LinkedInLogoIcon className="h-5 w-5" />,
   },
   {
-    href: "",
+    href: "https://twitter.com/altiverr",
     name: "Twitter",
-    icon: <TwitterLogoIcon className="h-4 w-4" />,
+    icon: <TwitterLogoIcon className="h-5 w-5" />,
   },
 ];
 
 export function SiteFooter() {
   return (
-    <footer>
+    <footer className="bg-gray-50 dark:bg-gray-900/30 mt-20">
       <div className="mx-auto w-full max-w-screen-xl xl:pb-2">
         <div className="md:flex md:justify-between px-8 p-4 py-16 sm:pb-16 gap-4">
           <div className="mb-12 flex-col flex gap-4">
             <Link href="/" className="flex items-center gap-2">
               <img
-                src="https://magicui.design/icon.png"
-                className="h-8 w-8 text-primary"
+                src="/logo.png"
+                className="h-10 w-auto"
+                alt="Altiverr Logo"
               />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                Magic UI
+                Altiverr
               </span>
             </Link>
-            <p className="max-w-xs">UI Library for Design Engineers</p>
+            <p className="max-w-xs text-gray-600 dark:text-gray-300">
+              Elevating Human Potential Through Intelligent AI Collaboration
+            </p>
+            <div className="mt-4">
+              <Link 
+                href="#contact" 
+                className="inline-flex items-center justify-center px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full hover:scale-105 transition-transform duration-300"
+              >
+                Get in Touch
+              </Link>
+            </div>
           </div>
           <div className="grid grid-cols-1 gap-8 sm:gap-10 sm:grid-cols-3">
             {footerNavs.map((nav) => (
@@ -94,7 +104,7 @@ export function SiteFooter() {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="cursor-pointer text-gray-400 hover:text-gray-200 duration-200 font-[450] text-sm"
+                        className="cursor-pointer text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 duration-200 font-medium text-sm"
                       >
                         {item.name}
                       </Link>
@@ -106,29 +116,30 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row sm:flex sm:items-center sm:justify-between rounded-md border-neutral-700/20 py-4 px-8 gap-2">
-          <div className="flex space-x-5 sm:justify-center sm:mt-0">
-            {footerSocials.map((social) => (
-              <Link
-                key={social.name}
-                href={social.href}
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-gray-600 fill-gray-500 hover:fill-gray-900 dark:hover:fill-gray-600"
-              >
-                {social.icon}
-                <span className="sr-only">{social.name}</span>
+        <div className="border-t border-gray-200 dark:border-gray-800">
+          <div className="flex flex-col sm:flex-row sm:flex sm:items-center sm:justify-between py-6 px-8 gap-4">
+            <div className="flex space-x-5 sm:justify-center sm:mt-0">
+              {footerSocials.map((social) => (
+                <Link
+                  key={social.name}
+                  href={social.href}
+                  className="text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                >
+                  {social.icon}
+                  <span className="sr-only">{social.name}</span>
+                </Link>
+              ))}
+            </div>
+            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+              © {new Date().getFullYear()}{" "}
+              <Link href="/" className="cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                Altiverr LLC
               </Link>
-            ))}
+              . All Rights Reserved.
+            </span>
           </div>
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            Copyright © {new Date().getFullYear()}{" "}
-            <Link href="/" className="cursor-pointer">
-              Magic UI
-            </Link>
-            . All Rights Reserved.
-          </span>
         </div>
       </div>
-      {/*   <SiteBanner /> */}
     </footer>
   );
 }
