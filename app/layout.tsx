@@ -4,8 +4,7 @@ import { cn } from "@/lib/utils";
 import { analytics } from "@/lib/analytics";
 import type { Metadata, Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
-import Analytics from "@/components/analytics";
-import { Suspense } from "react";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -41,9 +40,6 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <Suspense>
-          <Analytics />
-        </Suspense>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -52,6 +48,7 @@ export default function RootLayout({
           {children}
           <Toaster />
         </ThemeProvider>
+        <GoogleAnalytics gaId="G-D6D70ETZSV" />
       </body>
     </html>
   );
