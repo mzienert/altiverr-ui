@@ -5,11 +5,7 @@ export const analytics = Analytics({
   app: 'altiverr',
   plugins: [
     googleAnalytics({
-      measurementIds: ['G-D6D70ETZSV'],
-      gtagConfig: {
-        anonymize_ip: true,
-        send_page_view: true,
-      },
+      measurementIds: ['G-D6D70ETZSV']
     }),
   ],
 }); 
