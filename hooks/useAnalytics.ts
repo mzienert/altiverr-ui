@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback } from 'react';
 import { 
   trackEvent, 
   trackPageView, 
@@ -7,32 +7,32 @@ import {
   type AnalyticsProperties,
   type PurchaseItem,
   type UserTraits
-} from '@/lib/analytics'
+} from '@/lib/analytics';
 
 export const useAnalytics = () => {
   const track = useCallback((eventName: string, properties: AnalyticsProperties = {}) => {
-    trackEvent(eventName, properties)
-  }, [])
+    trackEvent(eventName, properties);
+  }, []);
 
   const page = useCallback((properties: AnalyticsProperties = {}) => {
-    trackPageView(properties)
-  }, [])
+    trackPageView(properties);
+  }, []);
 
   const identify = useCallback((userId: string, traits: UserTraits = {}) => {
-    identifyUser(userId, traits)
-  }, [])
+    identifyUser(userId, traits);
+  }, []);
 
   const purchase = useCallback((items: PurchaseItem[], total: number) => {
-    trackPurchase(items, total)
-  }, [])
+    trackPurchase(items, total);
+  }, []);
 
   return {
     track,
     page,
     identify,
     purchase
-  }
-}
+  };
+};
 
 // Export the hook type for consumers
-export type AnalyticsHook = ReturnType<typeof useAnalytics>
+export type AnalyticsHook = ReturnType<typeof useAnalytics>;
