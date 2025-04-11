@@ -1,7 +1,6 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
-import { analytics } from "@/lib/analytics";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
@@ -15,11 +14,6 @@ export const metadata: Metadata = {
   title: "Altiverr | ",
   description: "The startup template from Magic UI",
 };
-
-// Initialize analytics
-if (typeof window !== 'undefined') {
-  analytics.page();
-}
 
 export default function RootLayout({
   children,
