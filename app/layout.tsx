@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
+import { analytics } from "@/lib/analytics";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
@@ -15,6 +16,11 @@ export const metadata: Metadata = {
   description: "The startup template from Magic UI",
 };
 
+// Initialize analytics page tracking
+if (typeof window !== 'undefined') {
+  analytics.page();
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -22,19 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-D6D70ETZSV"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-D6D70ETZSV');
-            `,
-          }}
-        />
-      </head>
+      <head />
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
