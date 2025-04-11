@@ -5,6 +5,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -55,10 +57,7 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-site-verification', // Add your Google Search Console verification code
-  },
+  }
 };
 
 export const viewport: Viewport = {
@@ -104,7 +103,11 @@ export default function RootLayout({
           defaultTheme="dark"
           disableTransitionOnChange
         >
-          {children}
+          <SiteHeader />
+          <main className="mx-auto flex-1 overflow-hidden">
+            {children}
+          </main>
+          <SiteFooter />
           <Toaster />
         </ThemeProvider>
         {gaId && process.env.NODE_ENV === 'production' && (
