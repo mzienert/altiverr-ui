@@ -100,7 +100,7 @@ export function StickyHeader({
                   >
                     <Link 
                       href={navItem.link}
-                      className="transition-colors hover:text-primary"
+                      className="transition-colors hover:text-primary text-sharp"
                     >
                       {navItem.label}
                     </Link>
@@ -136,7 +136,7 @@ export function StickyHeader({
                       <button
                         onClick={() => handleCtaClick('header-sticky-nav')}
                         className={cn(
-                          "relative inline-flex w-fit items-center justify-center gap-x-1.5 overflow-hidden rounded-full bg-gradient-to-r from-slate-500 via-slate-600 to-slate-700 px-3 py-1.5 text-white outline-none hover:scale-105 transition-transform duration-300"
+                          "relative inline-flex w-fit items-center justify-center gap-x-1.5 overflow-hidden rounded-full bg-gradient-to-r from-slate-500 via-slate-600 to-slate-700 px-3 py-1.5 text-white outline-none hover:scale-105 transition-transform duration-300 text-sharp"
                         )}
                       >
                         Schedule a Consultation
@@ -161,7 +161,7 @@ export function StickyHeader({
             onClick={() => handleCtaClick('header-top-right')}
             className={cn(
               buttonVariants({ size: "default" }),
-              "relative bg-gradient-to-r from-slate-500 via-slate-600 to-slate-700 text-white rounded-full px-4 py-2 hover:scale-105 transition-transform duration-300"
+              "relative bg-gradient-to-r from-slate-500 via-slate-600 to-slate-700 text-white rounded-full px-4 py-2 hover:scale-105 transition-transform duration-300 text-sharp"
             )}
           >
             Schedule a Consultation
@@ -233,7 +233,7 @@ export function StickyHeader({
                 <li key={navItem.id}>
                   <Link
                     href={navItem.link}
-                    className="block py-2 text-lg"
+                    className="block py-2 text-lg text-sharp"
                     onClick={() => setActive(false)}
                   >
                     {navItem.label}

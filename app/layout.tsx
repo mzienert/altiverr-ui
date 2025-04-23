@@ -12,6 +12,9 @@ import "./globals.css";
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+  fallback: ["system-ui", "sans-serif"],
 });
 
 export const metadata: Metadata = {
