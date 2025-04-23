@@ -43,13 +43,13 @@ export default function FrameworkSection() {
     <section
       id="framework"
       ref={ref}
-      className="relative mx-auto my-24 max-w-[80rem] px-6 md:px-8 py-16 bg-white dark:bg-gray-900/20 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm"
+      className="relative mx-auto px-6 md:px-8 py-16 bg-black/50 backdrop-blur-sm rounded-xl border border-white/10 shadow-sm"
     >
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">
           The PEAK Framework: A Clear Path to Optimization
         </h2>
-        <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-lg">
+        <p className="max-w-2xl mx-auto text-gray-300 text-lg">
           PEAK is our proprietary consulting framework, developed specifically to help small and mid-sized businesses create scalable systems that perform
         </p>
       </div>
@@ -60,18 +60,18 @@ export default function FrameworkSection() {
             <div className={`${step.color} w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4`}>
               {step.letter}
             </div>
-            <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">{step.description}</p>
+            <h3 className="text-xl font-semibold mb-2 text-white">{step.title}</h3>
+            <p className="text-gray-300 mb-4">{step.description}</p>
             
             {index < frameworkSteps.length - 1 && (
-              <div className="hidden lg:block absolute top-6 left-12 w-[calc(100%-3rem)] h-px bg-gray-200 dark:bg-gray-700"></div>
+              <div className="hidden lg:block absolute top-6 left-12 w-[calc(100%-3rem)] h-px bg-white/20"></div>
             )}
           </div>
         ))}
       </div>
       
       <div className="text-center">
-        <p className="font-medium text-lg">
+        <p className="font-medium text-lg text-white">
           We don't just advise. We build, implement, and improve until you see results.
         </p>
       </div>

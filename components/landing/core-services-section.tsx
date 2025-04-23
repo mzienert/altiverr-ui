@@ -35,13 +35,13 @@ export default function CoreServicesSection() {
     <section
       id="core-services"
       ref={ref}
-      className="relative mx-auto my-24 max-w-[80rem] px-6 md:px-8"
+      className="relative mx-auto mb-24 max-w-[80rem] px-6 md:px-8"
     >
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">
           What We Deliver
         </h2>
-        <p className="max-w-2xl mx-auto text-gray-500 dark:text-gray-400 text-lg">
+        <p className="max-w-2xl mx-auto text-gray-300 text-lg">
           Our end-to-end solutions address every aspect of operational optimization
         </p>
       </div>
@@ -50,13 +50,13 @@ export default function CoreServicesSection() {
         {services.map((service, index) => (
           <div 
             key={index} 
-            className="p-6 bg-white dark:bg-gray-800/40 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col h-full"
+            className="p-6 bg-black/50 backdrop-blur-sm rounded-lg shadow-sm border border-white/10 flex flex-col h-full"
           >
-            <div className="mb-4 p-3 rounded-full bg-gray-50 dark:bg-gray-700/40 w-fit">
+            <div className="mb-4 p-3 rounded-full bg-white/5 w-fit">
               {service.icon}
             </div>
-            <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-            <p className="text-gray-600 dark:text-gray-300 flex-grow">{service.description}</p>
+            <h3 className="text-xl font-semibold mb-3 text-white">{service.title}</h3>
+            <p className="text-gray-300 flex-grow">{service.description}</p>
           </div>
         ))}
       </div>

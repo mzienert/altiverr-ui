@@ -35,10 +35,10 @@ export default function WhyChooseSection() {
     <section
       id="why-choose"
       ref={ref}
-      className="relative mx-auto my-24 max-w-[80rem] px-6 md:px-8 bg-gray-50 dark:bg-gray-900/30 py-16 rounded-xl"
+      className="relative mx-auto pb-16 max-w-[80rem] px-6 md:px-8"
     >
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-white">
           Why SMBs Choose Altiverr
         </h2>
       </div>
@@ -47,12 +47,12 @@ export default function WhyChooseSection() {
         {features.map((feature, index) => (
           <div 
             key={index} 
-            className="flex gap-6 p-6 bg-white dark:bg-gray-800/40 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+            className="flex gap-6 p-6 bg-black/50 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow border border-white/10"
           >
             <div className="shrink-0">{feature.icon}</div>
             <div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
+              <p className="text-gray-300">{feature.description}</p>
             </div>
           </div>
         ))}

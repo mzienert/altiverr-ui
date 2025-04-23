@@ -103,11 +103,13 @@ export default function RootLayout({
           defaultTheme="dark"
           disableTransitionOnChange
         >
-          <SiteHeader />
-          <main className="mx-auto flex-1 overflow-hidden">
-            {children}
-          </main>
-          <SiteFooter />
+          <div className="relative flex flex-col min-h-screen">
+            <SiteHeader />
+            <main className="mx-auto flex-1 overflow-hidden">
+              {children}
+            </main>
+            <SiteFooter />
+          </div>
           <Toaster />
         </ThemeProvider>
         {gaId && process.env.NODE_ENV === 'production' && (

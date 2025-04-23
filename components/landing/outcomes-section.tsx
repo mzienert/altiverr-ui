@@ -35,10 +35,10 @@ export default function OutcomesSection() {
     <section
       id="outcomes"
       ref={ref}
-      className="relative mx-auto my-24 max-w-[80rem] px-6 md:px-8"
+      className="relative mx-auto mb-24 max-w-[80rem] px-6 md:px-8"
     >
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">
           Operational Outcomes, Backed by Data
         </h2>
       </div>
@@ -47,21 +47,15 @@ export default function OutcomesSection() {
         {stats.map((stat, index) => (
           <div 
             key={index} 
-            className="p-6 bg-white dark:bg-gray-800/40 rounded-lg shadow-sm flex flex-col items-center text-center"
+            className="p-6 bg-black/50 backdrop-blur-sm rounded-lg shadow-sm border border-white/10 flex flex-col items-center text-center"
           >
             <div className={cn("rounded-md px-3 py-1 text-sm font-medium mb-3", stat.color)}>
               Metric
             </div>
-            <span className="text-4xl font-bold mb-2">{stat.value}</span>
-            <p className="text-gray-600 dark:text-gray-300">{stat.description}</p>
+            <span className="text-4xl font-bold mb-2 text-white">{stat.value}</span>
+            <p className="text-gray-300">{stat.description}</p>
           </div>
         ))}
-      </div>
-      
-      <div className="bg-gray-50 dark:bg-gray-800/30 p-8 rounded-xl shadow-sm">
-        <blockquote className="text-xl text-gray-600 dark:text-gray-300 italic text-center max-w-3xl mx-auto">
-          "Before Altiverr, we were juggling spreadsheets and wasting hours a week. Now, everything flows. We get more done with less stress, and our team finally has time to think big."
-        </blockquote>
       </div>
     </section>
   );

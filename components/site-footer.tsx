@@ -67,8 +67,8 @@ const footerSocials = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-gray-50 dark:bg-gray-900/30 mt-20">
-      <div className="mx-auto w-full max-w-screen-xl xl:pb-2">
+    <footer className="bg-background">
+      <div className="mx-auto w-full max-w-screen-xl">
         <div className="md:flex md:justify-between px-8 p-4 py-16 sm:pb-16 gap-4">
           <div className="mb-12 flex-col flex gap-4">
             <Link href="/" className="flex items-center gap-2">
@@ -84,14 +84,6 @@ export function SiteFooter() {
             <p className="max-w-xs text-gray-600 dark:text-gray-300">
               Elevating Human Potential Through Intelligent AI Collaboration
             </p>
-            <div className="mt-4">
-              <Link 
-                href="#contact" 
-                className="inline-flex items-center justify-center px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full hover:scale-105 transition-transform duration-300"
-              >
-                Get in Touch
-              </Link>
-            </div>
           </div>
           <div className="grid grid-cols-1 gap-8 sm:gap-10 sm:grid-cols-3">
             {footerNavs.map((nav) => (
