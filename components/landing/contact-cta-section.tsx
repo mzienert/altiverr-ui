@@ -5,12 +5,11 @@ import { useRef } from "react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
 import { ChevronRight } from "lucide-react";
-import { useCtaClick } from "@/hooks/useCtaClick";
+import { CalendlyPopupButton } from "@/components/calendly/CalendlyPopupButton";
 
 export default function ContactCTASection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
-  const handleCtaClick = useCtaClick();
   
   return (
     <section
@@ -36,16 +35,14 @@ export default function ContactCTASection() {
             Book your free PEAK Framework consultation and let us identify exactly where automation can transform your business
           </p>
           <div className="relative group">
-            <button
-              onClick={() => handleCtaClick('contact-section-main')}
+            <CalendlyPopupButton
+              text="Schedule a Free Consultation"
+              source="contact-section"
+              campaign="forest-cta"
               className={cn(
-                buttonVariants({ size: "lg" }),
                 "relative bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white rounded-full px-8 py-6 text-lg font-medium group-hover:scale-105 transition-all duration-300"
               )}
-            >
-              Schedule a Free Consultation
-              <ChevronRight className="ml-1 inline-block size-5 transition-all duration-300 ease-out group-hover:translate-x-1" />
-            </button>
+            />
           </div>
         </div>
       </div>

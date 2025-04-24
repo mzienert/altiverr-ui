@@ -1,12 +1,15 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
 import { CheckIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
-import { Loader } from "lucide-react";
+import { ChevronRight, Loader } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
+import { useCtaClick } from "@/hooks/useCtaClick";
 
 type Interval = "month" | "year";
 
@@ -80,15 +83,7 @@ const demoPrices = [
 
 export default function PricingSection() {
   const [interval, setInterval] = useState<Interval>("month");
-  const [isLoading, setIsLoading] = useState(false);
-  const [id, setId] = useState<string | null>(null);
-
-  const onSubscribeClick = async (priceId: string) => {
-    setIsLoading(true);
-    setId(priceId);
-    await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate a delay
-    setIsLoading(false);
-  };
+  const handleCtaClick = useCtaClick();
 
   return (
     <section id="pricing">
@@ -175,24 +170,19 @@ export default function PricingSection() {
                 </span>
               </motion.div>
 
-              <Button
+              <Link
+                href="/consultation"
+                onClick={() => handleCtaClick(`pricing-${price.name.toLowerCase()}`)}
                 className={cn(
-                  "group relative w-full gap-2 overflow-hidden text-lg font-semibold tracking-tighter",
-                  "transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2"
+                  "group relative w-full flex items-center justify-center gap-2 py-2 overflow-hidden text-lg font-semibold tracking-tighter",
+                  "transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2",
+                  buttonVariants()
                 )}
-                disabled={isLoading}
-                onClick={() => void onSubscribeClick(price.id)}
               >
                 <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform-gpu bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-96 dark:bg-black" />
-                {(!isLoading || (isLoading && id !== price.id)) && (
-                  <p>Subscribe</p>
-                )}
-
-                {isLoading && id === price.id && <p>Subscribing</p>}
-                {isLoading && id === price.id && (
-                  <Loader className="mr-2 h-4 w-4 animate-spin" />
-                )}
-              </Button>
+                Book a Consultation
+                <ChevronRight className="h-4 w-4" />
+              </Link>
 
               <hr className="m-0 h-px w-full border-none bg-gradient-to-r from-neutral-200/0 via-neutral-500/30 to-neutral-200/0" />
               {price.features && price.features.length > 0 && (

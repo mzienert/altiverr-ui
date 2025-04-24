@@ -57,7 +57,7 @@ export function StickyHeader({
     <header ref={stickyNavRef} className="sticky top-0 z-50 px-6 py-4 md:px-10 xl:px-0 backdrop-blur-md">
       <nav className="relative mx-auto flex items-center justify-between max-w-7xl">
         <motion.div
-          className="h-10 w-auto"
+          className="h-10 w-auto flex-shrink-0"
           animate={{
             y: scrollY >= 120 ? -50 : 0,
             opacity: scrollY >= 120 ? 0 : 1,
@@ -73,7 +73,7 @@ export function StickyHeader({
           </Link>
         </motion.div>
 
-        <ul className="sticky left-4 right-4 top-4 z-[60] hidden items-center justify-center gap-x-5 md:flex">
+        <ul className="absolute left-1/2 transform -translate-x-1/2 z-[60] hidden items-center justify-center md:flex">
           <motion.div
             initial={{ x: 0 }}
             animate={{
@@ -89,18 +89,18 @@ export function StickyHeader({
               duration: 0.05,
               delay: 0.05,
             }}
-            className="flex h-12 w-auto items-center justify-center overflow-hidden rounded-full px-6 py-2.5 transition-all bg-background md:p-1.5 md:py-2"
+            className="flex h-12 min-w-[400px] md:min-w-[550px] items-center justify-center overflow-hidden rounded-full bg-background px-8 py-2.5 transition-all md:p-1.5 md:py-2"
           >
-            <nav className="relative h-full items-center justify-between gap-x-3.5 md:flex">
-              <ul className="flex h-full flex-col justify-center gap-6 md:flex-row md:justify-start md:gap-0 lg:gap-1">
+            <nav className="relative h-full items-center justify-center gap-x-3.5 md:flex">
+              <ul className="flex h-full flex-col justify-center gap-6 md:flex-row md:justify-start md:gap-3 lg:gap-5 whitespace-nowrap">
                 {navLinks.map((navItem) => (
                   <li
                     key={navItem.id}
-                    className="flex items-center justify-center px-[0.75rem] py-[0.375rem]"
+                    className="flex items-center justify-center px-4 py-[0.375rem]"
                   >
                     <Link 
                       href={navItem.link}
-                      className="transition-colors hover:text-primary text-sharp"
+                      className="transition-colors hover:text-[#FE7743] text-sharp"
                     >
                       {navItem.label}
                     </Link>
@@ -136,7 +136,7 @@ export function StickyHeader({
                       <button
                         onClick={() => handleCtaClick('header-sticky-nav')}
                         className={cn(
-                          "relative inline-flex w-fit items-center justify-center gap-x-1.5 overflow-hidden rounded-full bg-gradient-to-r from-slate-500 via-slate-600 to-slate-700 px-3 py-1.5 text-white outline-none hover:scale-105 transition-transform duration-300 text-sharp"
+                          "relative inline-flex w-fit items-center justify-center gap-x-1.5 overflow-hidden rounded-full bg-[#FE7743] px-3 py-1.5 text-[#000000] outline-none hover:scale-105 transition-transform duration-300 text-sharp"
                         )}
                       >
                         Schedule a Consultation
@@ -161,7 +161,7 @@ export function StickyHeader({
             onClick={() => handleCtaClick('header-top-right')}
             className={cn(
               buttonVariants({ size: "default" }),
-              "relative bg-gradient-to-r from-slate-500 via-slate-600 to-slate-700 text-white rounded-full px-4 py-2 hover:scale-105 transition-transform duration-300 text-sharp"
+              "relative bg-[#FE7743] text-[#000000] rounded-full px-4 py-2 hover:scale-105 transition-transform duration-300 text-sharp"
             )}
           >
             Schedule a Consultation
@@ -176,7 +176,7 @@ export function StickyHeader({
           >
             <motion.span
               style={{ left: "50%", top: "35%", x: "-50%", y: "-50%" }}
-              className="absolute h-0.5 w-5 bg-black dark:bg-white"
+              className="absolute h-0.5 w-5 bg-[#273F4F] dark:bg-[#EFEEEA]"
               variants={{
                 open: {
                   rotate: ["0deg", "0deg", "45deg"],
@@ -191,7 +191,7 @@ export function StickyHeader({
             ></motion.span>
             <motion.span
               style={{ left: "50%", top: "50%", x: "-50%", y: "-50%" }}
-              className="absolute h-0.5 w-5 bg-black dark:bg-white"
+              className="absolute h-0.5 w-5 bg-[#273F4F] dark:bg-[#EFEEEA]"
               variants={{
                 open: {
                   opacity: 0,
@@ -203,7 +203,7 @@ export function StickyHeader({
             ></motion.span>
             <motion.span
               style={{ left: "50%", bottom: "30%", x: "-50%", y: "-50%" }}
-              className="absolute h-0.5 w-5 bg-black dark:bg-white"
+              className="absolute h-0.5 w-5 bg-[#273F4F] dark:bg-[#EFEEEA]"
               variants={{
                 open: {
                   rotate: ["0deg", "0deg", "-45deg"],
@@ -248,7 +248,7 @@ export function StickyHeader({
                   }}
                   className={cn(
                     buttonVariants({ size: "default" }),
-                    "relative bg-gradient-to-r from-slate-500 via-slate-600 to-slate-700 text-white w-full justify-center"
+                    "relative bg-[#FE7743] text-[#000000] w-full justify-center"
                   )}
                 >
                   Schedule a Consultation

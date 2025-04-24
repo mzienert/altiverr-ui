@@ -1,41 +1,40 @@
-import { useCallback, useRef, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useAnalytics } from './useAnalytics';
+import { create } from 'zustand';
+
+// Create a global store for Calendly modal state
+interface CalendlyModalState {
+  isOpen: boolean;
+  source: string;
+  campaign: string;
+  openModal: () => void;
+  closeModal: () => void;
+  setTracking: (source: string, campaign: string) => void;
+}
+
+export const useCalendlyModalStore = create<CalendlyModalState>((set) => ({
+  isOpen: false,
+  source: 'website',
+  campaign: 'default',
+  openModal: () => set({ isOpen: true }),
+  closeModal: () => set({ isOpen: false }),
+  setTracking: (source, campaign) => set({ source, campaign }),
+}));
 
 export const useCtaClick = () => {
   const { track } = useAnalytics();
-  const linkRef = useRef<HTMLAnchorElement | null>(null);
-
-  // Create a hidden anchor element for opening links
-  useEffect(() => {
-    if (typeof document !== 'undefined') {
-      const link = document.createElement('a');
-      link.style.display = 'none';
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      document.body.appendChild(link);
-      linkRef.current = link;
-      
-      return () => {
-        document.body.removeChild(link);
-      };
-    }
-  }, []);
+  const { openModal, setTracking } = useCalendlyModalStore();
 
   const handleCtaClick = useCallback((ctaLocation: string) => {
-    console.log('tracking cta click', ctaLocation);
     // Track the CTA click with the location
     track('cta_click', { ctaLocation });
 
-    // Handle different CTA types based on the action needed
-    // For now, all CTAs go to Calendly, but we track which one was clicked
-    if (linkRef.current) {
-      linkRef.current.href = 'https://calendly.com/matt-altiverr/30min';
-      linkRef.current.click();
-    } else {
-      // Fallback if the ref isn't available
-      window.open('https://calendly.com/matt-altiverr/30min', '_blank');
-    }
-  }, [track]);
+    // Set the source and campaign for tracking
+    setTracking(ctaLocation, 'cta_click');
+    
+    // Open the Calendly modal
+    openModal();
+  }, [track, openModal, setTracking]);
 
   return handleCtaClick;
 }; 

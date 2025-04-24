@@ -20,37 +20,37 @@ const tiles = [
   {
     icon: <HeartHandshake className="size-full" />,
     bg: (
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 opacity-70 blur-[20px] filter"></div>
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-[#FE7743] opacity-70 blur-[20px] filter"></div>
     ),
   },
   {
     icon: <Globe className="size-full" />,
     bg: (
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-slate-300 via-slate-400 to-slate-500 opacity-70 blur-[20px] filter"></div>
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-[#FE7743]/80 opacity-70 blur-[20px] filter"></div>
     ),
   },
   {
     icon: <File className="size-full" />,
     bg: (
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-slate-500 via-slate-600 to-slate-700 opacity-70 blur-[20px] filter"></div>
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-[#273F4F] opacity-70 blur-[20px] filter"></div>
     ),
   },
   {
     icon: <Shield className="size-full" />,
     bg: (
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 opacity-70 blur-[20px] filter"></div>
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-[#FE7743] opacity-70 blur-[20px] filter"></div>
     ),
   },
   {
     icon: <Rss className="size-full" />,
     bg: (
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 opacity-70 blur-[20px] filter"></div>
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-[#273F4F] opacity-70 blur-[20px] filter"></div>
     ),
   },
   {
     icon: <BarChart className="size-full" />,
     bg: (
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-slate-600 via-slate-500 to-slate-400 opacity-70 blur-[20px] filter"></div>
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-[#FE7743]/80 opacity-70 blur-[20px] filter"></div>
     ),
   },
 ];
@@ -96,7 +96,7 @@ const Card = (card: { icon: JSX.Element; bg: JSX.Element }) => {
       className={cn(
         "relative size-20 cursor-pointer overflow-hidden rounded-2xl border p-4",
         // light styles
-        "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
+        "bg-[#EFEEEA] [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
         // dark styles
         "transform-gpu dark:bg-transparent dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
       )}
@@ -171,10 +171,10 @@ export default function CallToActionSection() {
               ))}
             </Marquee>
             <div className="absolute z-10">
-              <div className="mx-auto size-24 rounded-[2rem] border bg-white/10 p-3 shadow-2xl backdrop-blur-md dark:bg-black/10 lg:size-32">
-                <HeartHandshake className="mx-auto size-16 text-black dark:text-white lg:size-24" />
+              <div className="mx-auto size-24 rounded-[2rem] border bg-[#EFEEEA]/10 p-3 shadow-2xl backdrop-blur-md dark:bg-[#000000]/10 lg:size-32">
+                <HeartHandshake className="mx-auto size-16 text-[#273F4F] dark:text-[#EFEEEA] lg:size-24" />
               </div>
-              <div className="z-10 mt-4 flex flex-col items-center text-center text-primary">
+              <div className="z-10 mt-4 flex flex-col items-center text-center text-[#273F4F] dark:text-[#EFEEEA]">
                 <h1 className="text-3xl font-bold lg:text-4xl">
                   Stop wasting time on design.
                 </h1>
@@ -182,20 +182,20 @@ export default function CallToActionSection() {
                   Start your 7-day free trial. No credit card required.
                 </p>
                 <Link
-                  href="#"
+                  href="/consultation"
                   className={cn(
                     buttonVariants({
                       size: "lg",
                       variant: "outline",
                     }),
-                    "group mt-4 rounded-[2rem] px-6 border-slate-400 hover:bg-slate-100 dark:border-slate-600 dark:hover:bg-slate-800"
+                    "group mt-4 rounded-[2rem] px-6 border-[#273F4F] hover:bg-[#273F4F]/10 dark:border-[#EFEEEA]/20 dark:hover:bg-[#EFEEEA]/10"
                   )}
                 >
                   Get Started
                   <ChevronRight className="ml-1 size-4 transition-all duration-300 ease-out group-hover:translate-x-1" />
                 </Link>
               </div>
-              <div className="absolute inset-0 -z-10 rounded-full  bg-backtround opacity-40 blur-xl dark:bg-background" />
+              <div className="absolute inset-0 -z-10 rounded-full bg-background opacity-40 blur-xl dark:bg-background" />
             </div>
             <div className="absolute inset-x-0 bottom-0 h-full bg-gradient-to-b from-transparent to-background to-70% dark:to-background" />
           </div>

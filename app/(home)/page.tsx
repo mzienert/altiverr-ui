@@ -4,12 +4,12 @@ import CoreServicesSection from "@/components/landing/core-services-section";
 import IndustriesSection from "@/components/landing/industries-section";
 import OutcomesSection from "@/components/landing/outcomes-section";
 import FrameworkSection from "@/components/landing/framework-section";
-import ContactCTASection from "@/components/landing/contact-cta-section";
+import ConsultationCTASection from "@/components/landing/consultation-cta-section";
 import HeroSection from "@/components/landing/hero-section";
 import Particles from "@/components/magicui/particles";
 import GradientBackgroundWrapper from "@/components/landing/gradient-background-wrapper";
 
-export default async function Page() {
+export default function Page() {
   return (
     <>
       <div className="relative">
@@ -31,7 +31,7 @@ export default async function Page() {
         <OutcomesSection />
         <FrameworkSection />
       </GradientBackgroundWrapper>
-      <ContactCTASection />
+      <ConsultationCTASection />
     </>
   );
 }

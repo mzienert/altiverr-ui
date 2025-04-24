@@ -4,41 +4,41 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 215 25% 27%;
+    --background: 39 5% 92%; /* #EFEEEA */
+    --foreground: 206 32% 23%; /* #273F4F */
 
-    --card: 210 40% 98%;
-    --card-foreground: 215 25% 27%;
+    --card: 39 5% 92%; /* #EFEEEA */
+    --card-foreground: 206 32% 23%; /* #273F4F */
 
-    --popover: 210 40% 98%;
-    --popover-foreground: 215 25% 27%;
+    --popover: 39 5% 92%; /* #EFEEEA */
+    --popover-foreground: 206 32% 23%; /* #273F4F */
 
-    --primary: 215 25% 27%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 18 99% 63%; /* #FE7743 */
+    --primary-foreground: 0 0% 0%; /* #000000 */
 
-    --secondary: 214 32% 91%;
-    --secondary-foreground: 215 25% 27%;
+    --secondary: 206 32% 23%; /* #273F4F */
+    --secondary-foreground: 39 5% 92%; /* #EFEEEA */
 
-    --muted: 214 32% 91%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 39 5% 85%; /* Lighter version of #EFEEEA */
+    --muted-foreground: 206 32% 40%; /* Lighter version of #273F4F */
 
-    --accent: 214 32% 91%;
-    --accent-foreground: 215 25% 27%;
+    --accent: 18 99% 63%; /* #FE7743 */
+    --accent-foreground: 0 0% 0%; /* #000000 */
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 39 5% 92%; /* #EFEEEA */
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 215 25% 27%;
+    --border: 206 32% 30%; /* Darker version of #273F4F */
+    --input: 206 32% 30%; /* Darker version of #273F4F */
+    --ring: 18 99% 63%; /* #FE7743 */
 
     --radius: 0.5rem;
 
     /* Custom properties */
     --navigation-height: 3.5rem;
-    --color-one: #64748b;
-    --color-two: #475569;
-    --color-three: #334155;
+    --color-one: #FE7743;
+    --color-two: #EFEEEA;
+    --color-three: #273F4F;
 
     /* 
     --color-one: #37ecba;
@@ -48,33 +48,33 @@
   }
 
   .dark {
-    --background: 0 0% 0%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 0%; /* #000000 */
+    --foreground: 39 5% 92%; /* #EFEEEA */
 
-    --card: 215 28% 17%;
-    --card-foreground: 210 40% 98%;
+    --card: 206 32% 23%; /* #273F4F */
+    --card-foreground: 39 5% 92%; /* #EFEEEA */
 
-    --popover: 215 28% 17%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 206 32% 23%; /* #273F4F */
+    --popover-foreground: 39 5% 92%; /* #EFEEEA */
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 215 25% 27%;
+    --primary: 18 99% 63%; /* #FE7743 */
+    --primary-foreground: 0 0% 0%; /* #000000 */
 
-    --secondary: 215 25% 27%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 39 5% 92%; /* #EFEEEA */
+    --secondary-foreground: 206 32% 23%; /* #273F4F */
 
-    --muted: 215 25% 27%;
-    --muted-foreground: 214 20% 65%;
+    --muted: 206 32% 30%; /* Darker version of #273F4F */
+    --muted-foreground: 39 5% 85%; /* Lighter version of #EFEEEA */
 
-    --accent: 215 25% 27%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 18 99% 63%; /* #FE7743 */
+    --accent-foreground: 0 0% 0%; /* #000000 */
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 39 5% 92%; /* #EFEEEA */
 
-    --border: 215 25% 27%;
-    --input: 215 25% 27%;
-    --ring: 210 40% 98%;
+    --border: 39 5% 92%; /* #EFEEEA */
+    --input: 39 5% 92%; /* #EFEEEA */
+    --ring: 18 99% 63%; /* #FE7743 */
   }
 
   html {
@@ -82,6 +82,7 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    scroll-behavior: smooth;
   }
   
   /* Improve text sharpness */
@@ -120,5 +121,29 @@
     @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Calendly widget styling */
+.calendly-embed-container {
+  position: relative;
+  width: 100%;
+  min-height: 1200px;
+  transition: min-height 0.5s ease-in-out;
+  margin-bottom: 2rem;
+}
+
+.calendly-inline-widget,
+.calendly-inline-widget iframe {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  border: 0;
+}
+
+/* Make sure the widget adapts to mobile screens */
+@media (max-width: 768px) {
+  .calendly-embed-container {
+    min-height: 1500px;
   }
 }

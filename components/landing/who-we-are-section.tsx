@@ -25,10 +25,8 @@ export default function WhoWeAreSection() {
             Unlocking Operational Excellence through Intelligent Automation
           </h2>
           <p className="text-lg text-gray-500 dark:text-gray-400">
-            Altiverr is an AI consulting and operations optimization partner built for small and mid-sized businesses. Our proprietary <span className="relative whitespace-nowrap">
-              <span className="text-slate-700 dark:text-slate-300 font-semibold">PEAK</span>
-              <span className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 opacity-30 blur-sm"></span>
-            </span> Framework delivers a structured, proven approach to operational clarity and efficiency. Whether you're a five-person team or a growing mid-market business, we work with you to eliminate bottlenecks, streamline workflows, and unlock scalable growth.
+            At Altiverr, we partner with small and mid-sized businesses to streamline operations and unlock sustainable growth. Our approach centers around the
+            <span className="text-slate-700 dark:text-slate-300 font-semibold"> PEAK</span> Framework – a proven system for identifying and resolving operational bottlenecks to unlock sustainable growth. Whether you're a startup or scaling your business, we're dedicated to helping you eliminate inefficiencies and build a foundation for long-term success. 
           </p>
         </div>
         <div className="relative h-[400px] rounded-xl shadow-lg overflow-hidden">

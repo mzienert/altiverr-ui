@@ -77,18 +77,18 @@ export function SiteFooter() {
                 className="h-10 w-auto"
                 alt="Altiverr Logo"
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-[#EFEEEA]">
                 Altiverr
               </span>
             </Link>
-            <p className="max-w-xs text-gray-600 dark:text-gray-300">
+            <p className="max-w-xs text-[#273F4F] dark:text-[#EFEEEA]/80">
               Elevating Human Potential Through Intelligent AI Collaboration
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 sm:gap-10 sm:grid-cols-3">
             {footerNavs.map((nav) => (
               <div key={nav.label}>
-                <h2 className="mb-6 text-sm tracking-tighter font-medium text-gray-900 uppercase dark:text-white">
+                <h2 className="mb-6 text-sm tracking-tighter font-medium text-[#273F4F] uppercase dark:text-[#EFEEEA]">
                   {nav.label}
                 </h2>
                 <ul className="gap-2 grid">
@@ -96,7 +96,7 @@ export function SiteFooter() {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="cursor-pointer text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 duration-200 font-medium text-sm"
+                        className="cursor-pointer text-[#273F4F]/80 dark:text-[#EFEEEA]/70 hover:text-[#FE7743] dark:hover:text-[#FE7743] duration-200 font-medium text-sm"
                       >
                         {item.name}
                       </Link>
@@ -108,23 +108,23 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 dark:border-gray-800">
+        <div className="border-t border-[#273F4F]/10 dark:border-[#EFEEEA]/10">
           <div className="flex flex-col sm:flex-row sm:flex sm:items-center sm:justify-between py-6 px-8 gap-4">
             <div className="flex space-x-5 sm:justify-center sm:mt-0">
               {footerSocials.map((social) => (
                 <Link
                   key={social.name}
                   href={social.href}
-                  className="text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                  className="text-[#273F4F]/70 dark:text-[#EFEEEA]/70 hover:text-[#FE7743] dark:hover:text-[#FE7743] transition-colors duration-300"
                 >
                   {social.icon}
                   <span className="sr-only">{social.name}</span>
                 </Link>
               ))}
             </div>
-            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            <span className="text-sm text-[#273F4F]/70 dark:text-[#EFEEEA]/70">
               © {new Date().getFullYear()}{" "}
-              <Link href="/" className="cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+              <Link href="/" className="cursor-pointer hover:text-[#FE7743] dark:hover:text-[#FE7743] transition-colors duration-300">
                 Altiverr LLC
               </Link>
               . All Rights Reserved.

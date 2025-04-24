@@ -7,6 +7,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { Providers } from "@/components/providers";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -106,14 +107,16 @@ export default function RootLayout({
           defaultTheme="dark"
           disableTransitionOnChange
         >
-          <div className="relative flex flex-col min-h-screen">
-            <SiteHeader />
-            <main className="mx-auto flex-1 overflow-hidden">
-              {children}
-            </main>
-            <SiteFooter />
-          </div>
-          <Toaster />
+          <Providers>
+            <div className="relative flex flex-col min-h-screen">
+              <SiteHeader />
+              <main className="mx-auto flex-1 overflow-hidden">
+                {children}
+              </main>
+              <SiteFooter />
+            </div>
+            <Toaster />
+          </Providers>
         </ThemeProvider>
         {gaId && process.env.NODE_ENV === 'production' && (
           <GoogleAnalytics gaId={gaId} />
