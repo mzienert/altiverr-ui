@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { CalendlyPopupButton } from "@/components/calendly/CalendlyPopupButton";
+import CalendlyPopupButton from "@/components/calendly/CalendlyPopupButton";
 
 export const metadata: Metadata = {
   title: "Contact Us | Altiverr",

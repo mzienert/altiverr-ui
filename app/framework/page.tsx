@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { CalendlyPopupButton } from "@/components/calendly/CalendlyPopupButton";
+import CalendlyPopupButton from "@/components/calendly/CalendlyPopupButton";
 import { FileText, Zap, Cpu, BarChart, Mountain, ArrowRight, ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
