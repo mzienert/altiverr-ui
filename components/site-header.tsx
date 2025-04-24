@@ -54,19 +54,21 @@ export function StickyHeader({
   );
 
   return (
-    <header ref={stickyNavRef} className="sticky top-0 z-50 px-6 py-4 md:px-10 xl:px-0 backdrop-blur-md">
+    <header ref={stickyNavRef} className="sticky top-0 z-50 px-6 py-0 md:px-10 xl:px-0 backdrop-blur-md">
       <nav className="relative mx-auto flex items-center justify-between max-w-7xl">
         <motion.div
-          className="h-10 w-auto flex-shrink-0"
+          className="h-24 w-auto flex-shrink-0 -my-2"
           animate={{
-            y: scrollY >= 120 ? -50 : 0,
-            opacity: scrollY >= 120 ? 0 : 1,
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            marginTop: "-8px",
           }}
           transition={{ duration: 0.15 }}
         >
           <Link href="/">
             <img
-              className="h-10"
+              className="h-24"
               src="/logo.png"
               alt="Altiverr Logo"
             />
@@ -89,7 +91,7 @@ export function StickyHeader({
               duration: 0.05,
               delay: 0.05,
             }}
-            className="flex h-12 min-w-[400px] md:min-w-[550px] items-center justify-center overflow-hidden rounded-full bg-background px-8 py-2.5 transition-all md:p-1.5 md:py-2"
+            className="flex h-10 min-w-[400px] md:min-w-[550px] items-center justify-center overflow-hidden rounded-full bg-background px-8 py-2 transition-all md:p-1.5 md:py-1.5"
           >
             <nav className="relative h-full items-center justify-center gap-x-3.5 md:flex">
               <ul className="flex h-full flex-col justify-center gap-6 md:flex-row md:justify-start md:gap-3 lg:gap-5 whitespace-nowrap">
@@ -132,16 +134,7 @@ export function StickyHeader({
                     transition={{ ease: "linear", duration: 0.3 }}
                     className="shrink-0 whitespace-nowrap"
                   >
-                    <li>
-                      <button
-                        onClick={() => handleCtaClick('header-sticky-nav')}
-                        className={cn(
-                          "relative inline-flex w-fit items-center justify-center gap-x-1.5 overflow-hidden rounded-full bg-[#FE7743] px-3 py-1.5 text-[#000000] outline-none hover:scale-105 transition-transform duration-300 text-sharp"
-                        )}
-                      >
-                        Schedule a Consultation
-                      </button>
-                    </li>
+                    {/* Removing the consultation button in the nav bar */}
                   </motion.ul>
                 )}
               </AnimatePresence>
@@ -152,8 +145,9 @@ export function StickyHeader({
         <motion.div
           className="z-[999] hidden items-center gap-x-5 md:flex"
           animate={{
-            y: scrollY >= 120 ? -50 : 0,
-            opacity: scrollY >= 120 ? 0 : 1,
+            y: 0,
+            opacity: 1,
+            scale: scrollY >= 120 ? 0.9 : 1,
           }}
           transition={{ duration: 0.15 }}
         >
