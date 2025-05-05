@@ -39,10 +39,11 @@ export default function Footer() {
   return (
     <footer className="bg-black w-full relative z-10">
       <div className="w-full">
-        <div className="flex flex-col items-center justify-center pt-8 pb-4">
-          <div className="flex items-center gap-2 mb-2">
-            <img src="/logo.png" alt="Altiverr Logo" className="h-6 w-auto" />
-            <span className="text-xl font-semibold text-[#EFEEEA]">Altiverr</span>
+        <div className="flex flex-col items-center justify-center pt-4 pb-2">
+          <div className="mb-2">
+            <Link href="/">
+              <img src="/logo.png" alt="Altiverr Logo" className="h-24 w-auto" />
+            </Link>
           </div>
           <p className="text-[#EFEEEA]/70 text-sm">
             Elevating Human Potential Through Intelligent AI Collaboration

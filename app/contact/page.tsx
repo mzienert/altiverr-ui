@@ -13,7 +13,7 @@ export default function ContactPage() {
         Contact <span className="text-[#FE7743]">Us</span>
       </h1>
       
-      <div className="max-w-4xl mx-auto">
+      <div className="mx-auto">
         <div className="bg-[#273F4F]/30 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-[#273F4F]/50 mb-10">
           <h2 className="text-2xl font-semibold mb-6 text-[#EFEEEA]">Schedule a Consultation</h2>
           <p className="text-lg mb-6 text-[#EFEEEA]/80 leading-relaxed">
@@ -37,19 +37,11 @@ export default function ContactPage() {
           <p className="text-lg mb-6 text-[#EFEEEA]/80 leading-relaxed">
             Have questions or want to learn more about our services? Reach out to us directly.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-medium mb-3 text-[#EFEEEA]">Email</h3>
-              <a href="mailto:info@altiverr.com" className="text-[#FE7743] hover:underline">
-                info@altiverr.com
-              </a>
-            </div>
-            <div>
-              <h3 className="text-xl font-medium mb-3 text-[#EFEEEA]">Phone</h3>
-              <a href="tel:+1234567890" className="text-[#FE7743] hover:underline">
-                (123) 456-7890
-              </a>
-            </div>
+          <div>
+            <h3 className="text-xl font-medium mb-3 text-[#EFEEEA]">Email</h3>
+            <a href="mailto:info@altiverr.com" className="text-[#FE7743] hover:underline">
+              info@altiverr.com
+            </a>
           </div>
         </div>
       </div>
