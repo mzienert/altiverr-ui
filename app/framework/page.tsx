@@ -66,8 +66,8 @@ export default function FrameworkPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative w-full h-[350px] flex items-center justify-center overflow-hidden bg-black pt-16">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
+      <section className="relative w-full h-[350px] flex items-center justify-center overflow-hidden bg-transparent pt-16">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 opacity-30 backdrop-filter backdrop-blur-[2px]"></div>
         <div className="absolute inset-0 flex items-center justify-center">
           <Mountain className="w-[350px] h-[350px] text-[#FE7743]/20" strokeWidth={2} />
         </div>
