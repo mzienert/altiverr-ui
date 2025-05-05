@@ -1,10 +1,6 @@
-import { Metadata } from "next";
-import CalendlyPopupButton from "@/components/calendly/CalendlyPopupButton";
+'use client'
 
-export const metadata: Metadata = {
-  title: "Contact Us | Altiverr",
-  description: "Get in touch with Altiverr to discuss your business transformation needs",
-};
+import CalendlyPopupButton from "@/components/calendly/CalendlyPopupButton";
 
 export default function ContactPage() {
   return (
