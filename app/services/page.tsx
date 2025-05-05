@@ -110,7 +110,35 @@ export default function ServicesPage() {
           </div>
         </div>
         
-        {/* Service 4 */}
+        {/* Service 4 - New Targeted Automation Sprints */}
+        <div className="bg-[#273F4F]/30 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-[#273F4F]/50 mb-10">
+          <div className="flex flex-col md:flex-row gap-8">
+            <div className="md:w-1/3 flex justify-center items-center">
+              {/* Placeholder for service image */}
+              <div className="w-full aspect-square bg-[#1B2B38] rounded-lg flex items-center justify-center">
+                <span className="text-[#EFEEEA]/50">Quick Automation Image</span>
+              </div>
+            </div>
+            <div className="md:w-2/3">
+              <h3 className="text-2xl font-bold mb-4 text-[#EFEEEA]">4. Targeted Automation Sprints</h3>
+              <p className="text-[#EFEEEA]/80 mb-6 leading-relaxed">
+                Already know what needs fixing? We scope and deliver automation projects fast. Whether it's a lead intake process, 
+                Slack notifications, or payment flow, we'll streamline it with full testing and handoff. Built using the PEAK Framework 
+                for scale, not patchwork.
+              </p>
+              <Button 
+                onClick={() => handleCtaClick('services_automation_sprints')}
+                className="flex items-center gap-2 py-3 px-6 bg-[#FE7743] hover:bg-[#FE7743]/90 text-black font-medium rounded-full transition-all duration-300 shadow-lg"
+                size="lg"
+              >
+                <Calendar className="h-5 w-5" />
+                Let's Build One System Right
+              </Button>
+            </div>
+          </div>
+        </div>
+        
+        {/* Service 5 - Documentation & Training (was 4 before) */}
         <div className="bg-[#273F4F]/30 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-[#273F4F]/50 mb-10">
           <div className="flex flex-col md:flex-row gap-8">
             <div className="md:w-1/3 flex justify-center items-center">
@@ -120,7 +148,7 @@ export default function ServicesPage() {
               </div>
             </div>
             <div className="md:w-2/3">
-              <h3 className="text-2xl font-bold mb-4 text-[#EFEEEA]">4. Systems Documentation & Training</h3>
+              <h3 className="text-2xl font-bold mb-4 text-[#EFEEEA]">5. Systems Documentation & Training</h3>
               <p className="text-[#EFEEEA]/80 mb-6 leading-relaxed">
                 Don't just get automations - get ownership. Every Altiverr system comes with comprehensive SOPs, 
                 detailed documentation, and personalized training for your team. We're committed to empowering your team 
@@ -139,8 +167,47 @@ export default function ServicesPage() {
           </div>
         </div>
         
+        {/* Service 6 - New Strategy & Consulting Support */}
+        <div className="bg-[#273F4F]/30 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-[#273F4F]/50 mb-10">
+          <div className="flex flex-col md:flex-row gap-8">
+            <div className="md:w-1/3 flex justify-center items-center">
+              {/* Placeholder for service image */}
+              <div className="w-full aspect-square bg-[#1B2B38] rounded-lg flex items-center justify-center">
+                <span className="text-[#EFEEEA]/50">Strategic Planning Image</span>
+              </div>
+            </div>
+            <div className="md:w-2/3">
+              <h3 className="text-2xl font-bold mb-4 text-[#EFEEEA]">6. Strategy & Consulting Support</h3>
+              <p className="text-[#EFEEEA]/80 mb-6 leading-relaxed">
+                Need clarity before committing to a full build? Book a focused session where we review your ops, 
+                suggest priority systems, and map out an implementation path. Perfect for leaders who need strategy before action.
+              </p>
+              <Button 
+                onClick={() => handleCtaClick('services_strategy_consulting')}
+                className="flex items-center gap-2 py-3 px-6 bg-[#FE7743] hover:bg-[#FE7743]/90 text-black font-medium rounded-full transition-all duration-300 shadow-lg"
+                size="lg"
+              >
+                <Calendar className="h-5 w-5" />
+                Start With Strategy
+              </Button>
+            </div>
+          </div>
+        </div>
+        
         {/* Bold attention-grabbing title */}
         <h2 className="text-4xl font-bold mt-16 mb-6 text-center text-[#EFEEEA]">Let's Build What <span className="text-[#FE7743]">Scales</span></h2>
+        
+        {/* Final CTA */}
+        <div className="mt-10 flex justify-center">
+          <Button 
+            onClick={() => handleCtaClick('services_get_started')}
+            className="flex items-center gap-2 py-4 px-8 bg-[#FE7743] hover:bg-[#FE7743]/90 text-black font-medium rounded-full transition-all duration-300 shadow-lg text-lg"
+            size="lg"
+          >
+            <Calendar className="h-6 w-6" />
+            Get Started
+          </Button>
+        </div>
       </div>
     </div>
   );
