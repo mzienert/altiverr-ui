@@ -22,11 +22,11 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Altiverr | AI-Powered Freelance Platform",
+    default: "Altiverr | Automation & Systems Architecture for Lean Teams",
     template: "%s | Altiverr"
   },
-  description: "Altiverr is an AI-powered freelance platform connecting talented professionals with clients worldwide. Find the perfect freelancer or showcase your skills.",
-  keywords: ["freelance", "AI", "remote work", "freelance platform", "hire freelancers", "find work"],
+  description: "We help lean teams eliminate manual work, automate operations, and build scalable backend systems using our proven PEAK Framework.",
+  keywords: ["automation", "systems architecture", "PEAK Framework", "business operations", "backend systems", "process automation"],
   authors: [{ name: "Altiverr Team" }],
   creator: "Altiverr",
   publisher: "Altiverr",
@@ -43,14 +43,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://altiverr.com',
-    title: 'Altiverr | AI-Powered Freelance Platform',
-    description: 'Altiverr is an AI-powered freelance platform connecting talented professionals with clients worldwide.',
+    title: 'Altiverr | Automation & Systems Architecture for Lean Teams',
+    description: 'We help lean teams eliminate manual work, automate operations, and build scalable backend systems using our proven PEAK Framework.',
     siteName: 'Altiverr',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Altiverr | AI-Powered Freelance Platform',
-    description: 'Altiverr is an AI-powered freelance platform connecting talented professionals with clients worldwide.',
+    title: 'Altiverr | Automation & Systems Architecture for Lean Teams',
+    description: 'We help lean teams eliminate manual work, automate operations, and build scalable backend systems using our proven PEAK Framework.',
     creator: '@altiverr',
   },
   robots: {
