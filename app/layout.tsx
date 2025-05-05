@@ -10,6 +10,7 @@ import { Providers } from "@/components/providers";
 import ConsultationCTASection from "@/components/landing/consultation-cta-section";
 import Footer from "@/components/footer";
 import Particles from "@/components/magicui/particles";
+import CrispChat from "@/components/crisp-chat";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -133,6 +134,7 @@ export default function RootLayout({
               <Footer />
             </div>
             <Toaster />
+            <CrispChat />
           </Providers>
         </ThemeProvider>
         {gaId && process.env.NODE_ENV === 'production' && (
