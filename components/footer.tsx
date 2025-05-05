@@ -1,7 +1,13 @@
 'use client';
 
-import { LinkedInLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
+import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+
+interface NavItem {
+  href: string;
+  name: string;
+  disabled?: boolean;
+}
 
 export default function Footer() {
   const footerNavs = [
@@ -11,22 +17,22 @@ export default function Footer() {
         { href: "/about", name: "About Altiverr" },
         { href: "/framework", name: "Our Framework" },
         { href: "/services", name: "Services" },
-      ],
+      ] as NavItem[],
     },
     {
       label: "RESOURCES",
       items: [
-        { href: "/case-studies", name: "Case Studies" },
-        { href: "/blog", name: "Blog" },
-        { href: "/faq", name: "FAQ" },
-      ],
+        { href: "#", name: "Case Studies", disabled: true },
+        { href: "#", name: "Blog", disabled: true },
+        { href: "#", name: "FAQ", disabled: true },
+      ] as NavItem[],
     },
     {
       label: "LEGAL",
       items: [
         { href: "/terms", name: "Terms of Service" },
         { href: "/privacy", name: "Privacy Policy" },
-      ],
+      ] as NavItem[],
     },
   ];
 
@@ -49,9 +55,16 @@ export default function Footer() {
               <ul className="space-y-3">
                 {column.items.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-[#EFEEEA]/70 hover:text-[#FE7743] text-sm">
-                      {item.name}
-                    </Link>
+                    {item.disabled ? (
+                      <span className="text-[#EFEEEA]/40 text-sm cursor-not-allowed">
+                        {item.name}
+                        <span className="ml-1 text-[10px] text-[#EFEEEA]/30">(Coming Soon)</span>
+                      </span>
+                    ) : (
+                      <Link href={item.href} className="text-[#EFEEEA]/70 hover:text-[#FE7743] text-sm">
+                        {item.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -60,14 +73,10 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-[#EFEEEA]/10 py-4 px-4 md:px-12 lg:px-16 text-center">
-          <div className="flex justify-center space-x-4 mb-2">
-            <Link href="https://www.linkedin.com/company/altiverr" className="text-[#EFEEEA]/70 hover:text-[#FE7743]">
+          <div className="flex justify-center mb-2">
+            <Link href="https://www.linkedin.com/in/matthew-zienert-7110b044/" className="text-[#EFEEEA]/70 hover:text-[#FE7743]">
               <LinkedInLogoIcon className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>
-            </Link>
-            <Link href="https://twitter.com/altiverr" className="text-[#EFEEEA]/70 hover:text-[#FE7743]">
-              <TwitterLogoIcon className="h-5 w-5" />
-              <span className="sr-only">Twitter</span>
             </Link>
           </div>
           <p className="text-[#EFEEEA]/70 text-sm">

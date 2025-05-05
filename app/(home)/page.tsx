@@ -16,8 +16,8 @@ export default function Page() {
         <CoreServicesSection />
         <IndustriesSection />
         <OutcomesSection />
-        <FrameworkSection />
       </div>
+      <FrameworkSection />
     </>
   );
 }
