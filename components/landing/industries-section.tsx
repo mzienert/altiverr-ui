@@ -10,6 +10,8 @@ import {
   Database, 
   Construction 
 } from "lucide-react";
+import { motion } from "framer-motion";
+import { MotionFadeIn } from '../animations/motion-wrapper';
 
 export default function IndustriesSection() {
   const ref = useRef(null);
@@ -17,27 +19,27 @@ export default function IndustriesSection() {
   
   const industries = [
     {
-      icon: <ShoppingBag className="size-8 text-indigo-500" />,
+      icon: <ShoppingBag className="size-8 text-[#FE7743]" />,
       name: "Retail & E-Commerce"
     },
     {
-      icon: <Truck className="size-8 text-blue-500" />,
+      icon: <Truck className="size-8 text-[#FE7743]" />,
       name: "Logistics & Warehousing"
     },
     {
-      icon: <Briefcase className="size-8 text-purple-500" />,
+      icon: <Briefcase className="size-8 text-[#FE7743]" />,
       name: "Professional Services"
     },
     {
-      icon: <Heart className="size-8 text-pink-500" />,
+      icon: <Heart className="size-8 text-[#FE7743]" />,
       name: "Healthcare & Wellness Providers"
     },
     {
-      icon: <Database className="size-8 text-cyan-500" />,
+      icon: <Database className="size-8 text-[#FE7743]" />,
       name: "SaaS & IT Firms"
     },
     {
-      icon: <Construction className="size-8 text-amber-500" />,
+      icon: <Construction className="size-8 text-[#FE7743]" />,
       name: "Construction & Manufacturing"
     }
   ];
@@ -46,28 +48,32 @@ export default function IndustriesSection() {
     <section
       id="industries"
       ref={ref}
-      className="relative mx-auto mb-24 max-w-[80rem] px-6 md:px-8"
+      className="py-20 w-full bg-transparent"
     >
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">
-          Built for Operations-Heavy Teams
+      <MotionFadeIn className="text-center mb-16">
+        <h2 className="text-3xl md:text-5xl font-bold mb-4 text-[#EFEEEA] tracking-tight">
+          Built for <span className="text-[#FE7743]">Operations-Heavy</span> Teams
         </h2>
-        <p className="max-w-2xl mx-auto text-gray-300 text-lg mb-12">
+        <p className="text-lg md:text-xl text-[#EFEEEA]/80 max-w-3xl mx-auto mb-12">
           Altiverr works with SMBs across a wide range of industries, especially those with operations that rely on repeatable tasks, cross-functional workflows, and data flows:
         </p>
-      </div>
+      </MotionFadeIn>
       
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 w-full">
         {industries.map((industry, index) => (
-          <div 
+          <motion.div 
             key={index} 
-            className="p-4 bg-black/50 backdrop-blur-sm rounded-lg shadow-sm border border-white/10 flex flex-col items-center text-center h-full"
+            className="bg-[#273F4F]/30 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-[#273F4F]/50 flex flex-col items-center text-center h-full group hover:bg-[#273F4F]/50 transition-all duration-300"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.05 }}
           >
-            <div className="mb-4 p-3 rounded-full bg-white/5">
+            <div className="mb-4 p-3 rounded-full bg-[#FE7743]/20 border border-[#FE7743]/30">
               {industry.icon}
             </div>
-            <h3 className="text-lg font-medium text-white">{industry.name}</h3>
-          </div>
+            <h3 className="text-lg font-medium text-[#EFEEEA] group-hover:text-[#FE7743] transition-colors duration-300">{industry.name}</h3>
+          </motion.div>
         ))}
       </div>
     </section>

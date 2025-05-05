@@ -3,6 +3,8 @@
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { FileText, Zap, Cpu, BarChart } from "lucide-react";
+import { motion } from "framer-motion";
+import { MotionFadeIn } from '../animations/motion-wrapper';
 
 export default function FrameworkSection() {
   const ref = useRef(null);
@@ -13,29 +15,29 @@ export default function FrameworkSection() {
       letter: "P",
       title: "Process Documentation",
       description: "Create clear, repeatable systems",
-      icon: <FileText className="size-6 text-white" />,
-      color: "bg-blue-600"
+      icon: <FileText className="size-10 text-white" />,
+      color: "bg-[#273F4F]"
     },
     {
       letter: "E",
       title: "Efficiency Optimization",
       description: "Eliminate wasted time and reduce friction",
-      icon: <Zap className="size-6 text-white" />,
-      color: "bg-purple-600"
+      icon: <Zap className="size-10 text-white" />,
+      color: "bg-[#273F4F]"
     },
     {
       letter: "A",
       title: "Automated Workflows",
       description: "Deploy low-code/no-code automation tools",
-      icon: <Cpu className="size-6 text-white" />,
-      color: "bg-indigo-600"
+      icon: <Cpu className="size-10 text-white" />,
+      color: "bg-[#273F4F]"
     },
     {
       letter: "K",
       title: "Key Metrics",
       description: "Track what matters and continuously improve",
-      icon: <BarChart className="size-6 text-white" />,
-      color: "bg-cyan-600"
+      icon: <BarChart className="size-10 text-white" />,
+      color: "bg-[#273F4F]"
     }
   ];
   
@@ -43,35 +45,49 @@ export default function FrameworkSection() {
     <section
       id="framework"
       ref={ref}
-      className="relative mx-auto px-6 md:px-8 py-16 bg-black/50 backdrop-blur-sm rounded-xl border border-white/10 shadow-sm"
+      className="py-20 w-full bg-transparent"
     >
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">
-          The PEAK Framework: A Clear Path to Optimization
+      <MotionFadeIn className="text-center mb-16">
+        <h2 className="text-3xl md:text-5xl font-bold mb-4 text-[#EFEEEA] tracking-tight">
+          The <span className="text-[#FE7743]">PEAK</span> Framework: A Clear Path to Optimization
         </h2>
-        <p className="max-w-2xl mx-auto text-gray-300 text-lg">
+        <p className="text-lg md:text-xl text-[#EFEEEA]/80 max-w-3xl mx-auto">
           PEAK is our proprietary consulting framework, developed specifically to help small and mid-sized businesses create scalable systems that perform
         </p>
-      </div>
+      </MotionFadeIn>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 w-full">
         {frameworkSteps.map((step, index) => (
-          <div key={index} className="relative flex flex-col">
-            <div className={`${step.color} w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4`}>
-              {step.letter}
+          <motion.div 
+            key={index} 
+            className="bg-[#273F4F]/30 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-[#273F4F]/30 flex flex-col h-full"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: index * 0.05 }}
+          >
+            <div className={`${step.color} px-5 py-4 flex items-center relative overflow-hidden`}>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FE7743]/20 to-[#273F4F]/90"></div>
+              <div className="w-12 h-12 rounded-full bg-[#FE7743]/20 flex items-center justify-center mr-3 relative z-10 shadow-lg border border-[#FE7743]/30 text-[#FE7743] text-2xl font-bold">
+                {step.letter}
+              </div>
+              <h3 className="text-xl font-bold text-[#EFEEEA] relative z-10">
+                {step.title}
+              </h3>
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-white">{step.title}</h3>
-            <p className="text-gray-300 mb-4">{step.description}</p>
+            <div className="p-5">
+              <p className="text-[#EFEEEA]/90 text-sm leading-relaxed">{step.description}</p>
+            </div>
             
             {index < frameworkSteps.length - 1 && (
-              <div className="hidden lg:block absolute top-6 left-12 w-[calc(100%-3rem)] h-px bg-white/20"></div>
+              <div className="hidden lg:block absolute top-6 left-12 w-[calc(100%-3rem)] h-px bg-[#FE7743]/20"></div>
             )}
-          </div>
+          </motion.div>
         ))}
       </div>
       
-      <div className="text-center">
-        <p className="font-medium text-lg text-white">
+      <div className="text-center max-w-3xl mx-auto">
+        <p className="font-medium text-lg text-[#EFEEEA]/90">
           We don't just advise. We build, implement, and improve until you see results.
         </p>
       </div>

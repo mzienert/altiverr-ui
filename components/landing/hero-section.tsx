@@ -19,9 +19,9 @@ export default function HeroSection() {
   };
   
   return (
-    <section className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] relative overflow-hidden text-[#EFEEEA] p-4 md:p-8">
-      <div className="container mx-auto max-w-6xl z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <section className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] overflow-hidden text-[#EFEEEA] py-4 relative z-10">
+      <div className="w-full px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
           {/* Text content */}
           <MotionFadeIn className="flex flex-col gap-6 order-2 md:order-1">
             <div className="space-y-2">

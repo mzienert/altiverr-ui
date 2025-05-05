@@ -14,8 +14,8 @@ export default function ConsultationCalendar() {
   
   if (!isClient || !calendlyUrl) {
     return (
-      <div className="h-[650px] flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-lg">
-        <div className="animate-pulse">Loading calendar...</div>
+      <div className="h-[650px] flex items-center justify-center bg-[#273F4F]/20 rounded-lg">
+        <div className="animate-pulse text-[#EFEEEA]">Loading calendar...</div>
       </div>
     );
   }
@@ -25,11 +25,11 @@ export default function ConsultationCalendar() {
       url={calendlyUrl}
       styles={{ height: '650px' }}
       pageSettings={{
-        backgroundColor: 'ffffff',
+        backgroundColor: '273F4F',
         hideEventTypeDetails: false,
         hideLandingPageDetails: false,
-        primaryColor: '64748b', // --color-one
-        textColor: '1e293b'     // primary dark color
+        primaryColor: 'FE7743', // Our primary orange color
+        textColor: 'EFEEEA'     // Our light text color
       }}
       utm={{
         utmSource: 'consultation-page',

@@ -2,13 +2,14 @@
 
 import CalendlyPopupButton from "@/components/calendly/CalendlyPopupButton";
 import { motion } from "framer-motion";
+import { MotionFadeIn } from '../animations/motion-wrapper';
 
 export default function ConsultationCTASection() {
   return (
-    <section className="relative">
+    <section className="py-16 relative w-full">
       {/* Mountain background */}
       <div 
-        className="h-[600px] w-full"
+        className="absolute inset-0 h-full w-full"
         style={{
           backgroundImage: "url('/forest.jpg')",
           backgroundSize: "cover",
@@ -21,48 +22,22 @@ export default function ConsultationCTASection() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30"></div>
       
       {/* Content with translucent box */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            className="bg-[#273F4F] backdrop-blur-sm dark:bg-[#273F4F]/30 rounded-xl shadow-xl p-8 md:p-12 max-w-5xl mx-auto text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold mb-6 text-[#EFEEEA]"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
+      <div className="relative z-10 w-full px-4 md:px-8 text-center">
+        <div className="bg-[#273F4F]/60 backdrop-blur-md rounded-xl shadow-xl p-8 md:p-12 w-full mx-auto" style={{ maxWidth: "1400px" }}>
+          <MotionFadeIn>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#EFEEEA] tracking-tight">
               Ready to Elevate Your Operations?
-            </motion.h2>
-            
-            <motion.p 
-              className="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-[#EFEEEA]/80"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
+            </h2>
+            <p className="text-lg mb-8 max-w-3xl mx-auto text-[#EFEEEA]/80 leading-relaxed">
               Book your free PEAK Framework consultation and let us identify exactly where 
               automation can transform your business
-            </motion.p>
-            
-            <motion.div
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <CalendlyPopupButton 
                 text="Schedule a Free Consultation" 
                 source="homepage"
                 campaign="main_cta"
-                className="py-6 px-8 text-lg bg-[#FE7743] hover:bg-[#FE7743]/90 text-[#000000] rounded-full transition-all duration-300"
+                className="py-4 px-8 text-lg bg-[#FE7743] hover:bg-[#FE7743]/90 text-black font-medium rounded-full transition-all duration-300 shadow-lg"
               />
               <span className="text-[#EFEEEA]/70">or</span>
               <a 
@@ -71,8 +46,8 @@ export default function ConsultationCTASection() {
               >
                 View our calendar
               </a>
-            </motion.div>
-          </motion.div>
+            </div>
+          </MotionFadeIn>
         </div>
       </div>
     </section>

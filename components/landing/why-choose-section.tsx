@@ -3,6 +3,8 @@
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { CheckCircle2, BarChart3, Workflow, Users } from "lucide-react";
+import { motion } from "framer-motion";
+import { MotionFadeIn } from '../animations/motion-wrapper';
 
 export default function WhyChooseSection() {
   const ref = useRef(null);
@@ -10,22 +12,22 @@ export default function WhyChooseSection() {
   
   const features = [
     {
-      icon: <CheckCircle2 className="size-10 text-green-500" />,
+      icon: <CheckCircle2 className="size-10 text-[#FE7743]" />,
       title: "Proven Results",
       description: "Clients using the PEAK Framework report eliminating 6,000+ manual tasks per year on average."
     },
     {
-      icon: <BarChart3 className="size-10 text-blue-500" />,
+      icon: <BarChart3 className="size-10 text-[#FE7743]" />,
       title: "ROI-Driven",
       description: "Most businesses see a 25% to 40% reduction in operations costs within the first 90 days."
     },
     {
-      icon: <Workflow className="size-10 text-purple-500" />,
+      icon: <Workflow className="size-10 text-[#FE7743]" />,
       title: "Flexible Implementation",
       description: "Whether we're automating invoicing, syncing your tools, or systemizing client onboarding, our solutions are tailored to your exact workflows."
     },
     {
-      icon: <Users className="size-10 text-orange-500" />,
+      icon: <Users className="size-10 text-[#FE7743]" />,
       title: "Human-First Philosophy",
       description: "Our goal isn't to replace your team—it's to free them up to focus on what humans do best: create, lead, and grow."
     }
@@ -35,26 +37,30 @@ export default function WhyChooseSection() {
     <section
       id="why-choose"
       ref={ref}
-      className="relative mx-auto pb-16 max-w-[80rem] px-6 md:px-8"
+      className="py-20 bg-transparent w-full"
     >
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-white">
-          Why SMBs Choose Altiverr
+      <MotionFadeIn className="text-center mb-16">
+        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-[#EFEEEA] tracking-tight">
+          Why SMBs <span className="text-[#FE7743]">Choose Altiverr</span>
         </h2>
-      </div>
+      </MotionFadeIn>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         {features.map((feature, index) => (
-          <div 
+          <motion.div 
             key={index} 
-            className="flex gap-6 p-6 bg-black/50 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow border border-white/10"
+            className="bg-[#273F4F]/30 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-[#273F4F]/50 flex gap-6 group hover:bg-[#273F4F]/50 transition-all duration-300"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <div className="shrink-0">{feature.icon}</div>
             <div>
-              <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
-              <p className="text-gray-300">{feature.description}</p>
+              <h3 className="text-xl font-semibold mb-4 text-[#EFEEEA] group-hover:text-[#FE7743] transition-colors duration-300">{feature.title}</h3>
+              <p className="text-[#EFEEEA]/80 leading-relaxed">{feature.description}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

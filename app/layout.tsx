@@ -6,8 +6,10 @@ import { Inter as FontSans } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
 import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
 import { Providers } from "@/components/providers";
+import ConsultationCTASection from "@/components/landing/consultation-cta-section";
+import Footer from "@/components/footer";
+import Particles from "@/components/magicui/particles";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -109,11 +111,26 @@ export default function RootLayout({
         >
           <Providers>
             <div className="relative flex flex-col min-h-screen">
+              {/* Full-screen particles background */}
+              <div className="fixed inset-0 pointer-events-none">
+                <Particles
+                  className="w-full h-full"
+                  quantity={1500}
+                  ease={200}
+                  size={0.18}
+                  staticity={20}
+                  color={"#ffffff"}
+                />
+              </div>
+              
               <SiteHeader />
-              <main className="mx-auto flex-1 overflow-hidden">
+              <main className="flex-1 w-full">
                 {children}
               </main>
-              <SiteFooter />
+              
+              {/* Full-width sections */}
+              <ConsultationCTASection />
+              <Footer />
             </div>
             <Toaster />
           </Providers>
