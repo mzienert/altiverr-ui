@@ -46,7 +46,7 @@ export default function Footer() {
             </Link>
           </div>
           <p className="text-[#EFEEEA]/70 text-sm">
-            Elevating Human Potential Through Intelligent AI Collaboration
+            Automate Smarter. Operate Stronger.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-8 px-4 md:px-12 lg:px-16 text-center">

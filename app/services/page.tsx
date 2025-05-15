@@ -29,12 +29,6 @@ export default function ServicesPage() {
         {/* Service 1 */}
         <div className="bg-[#273F4F]/30 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-[#273F4F]/50 mb-10">
           <div className="flex flex-col md:flex-row gap-8">
-            <div className="md:w-1/3 flex justify-center items-center">
-              {/* Placeholder for service image */}
-              <div className="w-full aspect-square bg-[#1B2B38] rounded-lg flex items-center justify-center">
-                <span className="text-[#EFEEEA]/50">Analysis & Strategy Image</span>
-              </div>
-            </div>
             <div className="md:w-2/3">
               <h3 className="text-2xl font-bold mb-4 text-[#EFEEEA]">1. Audit & PEAK Blueprint</h3>
               <p className="text-[#EFEEEA]/80 mb-6 leading-relaxed">
@@ -58,12 +52,6 @@ export default function ServicesPage() {
         {/* Service 2 */}
         <div className="bg-[#273F4F]/30 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-[#273F4F]/50 mb-10">
           <div className="flex flex-col md:flex-row gap-8">
-            <div className="md:w-1/3 flex justify-center items-center">
-              {/* Placeholder for service image */}
-              <div className="w-full aspect-square bg-[#1B2B38] rounded-lg flex items-center justify-center">
-                <span className="text-[#EFEEEA]/50">Onboarding Process Image</span>
-              </div>
-            </div>
             <div className="md:w-2/3">
               <h3 className="text-2xl font-bold mb-4 text-[#EFEEEA]">2. Automated Onboarding Systems</h3>
               <p className="text-[#EFEEEA]/80 mb-6 leading-relaxed">
@@ -86,12 +74,6 @@ export default function ServicesPage() {
         {/* Service 3 */}
         <div className="bg-[#273F4F]/30 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-[#273F4F]/50 mb-10">
           <div className="flex flex-col md:flex-row gap-8">
-            <div className="md:w-1/3 flex justify-center items-center">
-              {/* Placeholder for service image */}
-              <div className="w-full aspect-square bg-[#1B2B38] rounded-lg flex items-center justify-center">
-                <span className="text-[#EFEEEA]/50">Interconnected Systems Image</span>
-              </div>
-            </div>
             <div className="md:w-2/3">
               <h3 className="text-2xl font-bold mb-4 text-[#EFEEEA]">3. Connect Your Systems</h3>
               <p className="text-[#EFEEEA]/80 mb-6 leading-relaxed">
@@ -113,12 +95,6 @@ export default function ServicesPage() {
         {/* Service 4 - New Targeted Automation Sprints */}
         <div className="bg-[#273F4F]/30 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-[#273F4F]/50 mb-10">
           <div className="flex flex-col md:flex-row gap-8">
-            <div className="md:w-1/3 flex justify-center items-center">
-              {/* Placeholder for service image */}
-              <div className="w-full aspect-square bg-[#1B2B38] rounded-lg flex items-center justify-center">
-                <span className="text-[#EFEEEA]/50">Quick Automation Image</span>
-              </div>
-            </div>
             <div className="md:w-2/3">
               <h3 className="text-2xl font-bold mb-4 text-[#EFEEEA]">4. Targeted Automation Sprints</h3>
               <p className="text-[#EFEEEA]/80 mb-6 leading-relaxed">
@@ -141,12 +117,6 @@ export default function ServicesPage() {
         {/* Service 5 - Documentation & Training (was 4 before) */}
         <div className="bg-[#273F4F]/30 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-[#273F4F]/50 mb-10">
           <div className="flex flex-col md:flex-row gap-8">
-            <div className="md:w-1/3 flex justify-center items-center">
-              {/* Placeholder for service image */}
-              <div className="w-full aspect-square bg-[#1B2B38] rounded-lg flex items-center justify-center">
-                <span className="text-[#EFEEEA]/50">Documentation & Training Image</span>
-              </div>
-            </div>
             <div className="md:w-2/3">
               <h3 className="text-2xl font-bold mb-4 text-[#EFEEEA]">5. Systems Documentation & Training</h3>
               <p className="text-[#EFEEEA]/80 mb-6 leading-relaxed">
@@ -170,12 +140,6 @@ export default function ServicesPage() {
         {/* Service 6 - New Strategy & Consulting Support */}
         <div className="bg-[#273F4F]/30 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-[#273F4F]/50 mb-10">
           <div className="flex flex-col md:flex-row gap-8">
-            <div className="md:w-1/3 flex justify-center items-center">
-              {/* Placeholder for service image */}
-              <div className="w-full aspect-square bg-[#1B2B38] rounded-lg flex items-center justify-center">
-                <span className="text-[#EFEEEA]/50">Strategic Planning Image</span>
-              </div>
-            </div>
             <div className="md:w-2/3">
               <h3 className="text-2xl font-bold mb-4 text-[#EFEEEA]">6. Strategy & Consulting Support</h3>
               <p className="text-[#EFEEEA]/80 mb-6 leading-relaxed">

@@ -82,7 +82,7 @@ export function SiteFooter() {
               </span>
             </Link>
             <p className="max-w-xs text-[#EFEEEA]/80">
-              Elevating Human Potential Through Intelligent AI Collaboration
+              Automate Smarter. Operate Stronger.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 sm:gap-10 sm:grid-cols-3">

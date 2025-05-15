@@ -57,7 +57,7 @@ export default function WhoWeAreSection() {
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="p-8 max-w-md text-center">
                 <h3 className="text-2xl font-bold mb-4 text-[#EFEEEA]">Our Vision</h3>
-                <p className="text-lg font-medium text-[#EFEEEA]/90">Elevating Human Potential Through Intelligent Collaboration</p>
+                <p className="text-lg font-medium text-[#EFEEEA]/90">Automate Smarter. Operate Stronger.</p>
               </div>
             </div>
           </motion.div>
